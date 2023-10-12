@@ -14,10 +14,10 @@ parameters:
 steps:
   - task: AzureCLI@2
     inputs:
-    azureSubscription: ${{ parameters.serviceConnection }}
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      docker build -t ${{ parameters.containerRegistry }}/web-game:tag 2048-game
-      az acr login -n {{ parameters.acrLogin }}
-      docker push ${{ parameters.containerRegistry }}/web-game:tag
+      azureSubscription: ${{ parameters.serviceConnection }}
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        docker build -t ${{ parameters.containerRegistry }}/web-game:tag 2048-game
+        az acr login -n {{ parameters.acrLogin }}
+        docker push ${{ parameters.containerRegistry }}/web-game:tag
