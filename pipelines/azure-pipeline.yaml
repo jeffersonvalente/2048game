@@ -1,0 +1,20 @@
+trigger: none
+
+pool:
+  vmImage: ubuntu-lastest
+
+stages:
+  - stage: dev
+    displayName: "DEV"
+    variables:
+      - group: estudosaks-dev
+    jobs:
+    - job: azureResources
+      displayName: "Docker Build"
+      steps:
+      - template: ../templates/template-docker-build.yaml
+        parameters:
+          serviceConnection: $(azuresvc)
+          containerRegistry: $(containerRegistry)
+          acrLogin: $(acrLogin)
+
