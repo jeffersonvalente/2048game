@@ -14,7 +14,7 @@ stages:
       steps:
       - template: ../templates/template-docker-build.yaml
         parameters:
-          serviceConnection: 'sc-estudos'
+          serviceConnection: 'my-sc'
           containerRegistry: $(containerRegistry)
           acrLogin: $(acrLogin)
 
