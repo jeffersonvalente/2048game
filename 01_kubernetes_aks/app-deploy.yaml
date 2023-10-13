@@ -21,7 +21,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: web-game
-        image: ${{ parameters.containerRegistry }}/web-game:tag
+        image: estudosaks.azurecr.io/web-game:tag
         ports:
         - containerPort: 80
         resources:
