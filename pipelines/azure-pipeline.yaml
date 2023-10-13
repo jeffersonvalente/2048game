@@ -14,15 +14,9 @@ stages:
       steps:
       - template: ../templates/template-docker-build.yaml
         parameters:
-          serviceConnection: 'sc-estudos'
+          serviceConnection: {{sua service connection}}
           containerRegistry: $(containerRegistry)
           acrLogin: $(acrLogin)
-
-#    - job: catAppDeploy
-#      displayName: "cat file"
-#      dependsOn: 'azureResources'
-#      steps:
-#        - script: cat 01_kubernetes_aks/app-deploy.yaml 
 
     - job: azureResources2
       displayName: "Kubernets Build"
@@ -30,7 +24,7 @@ stages:
       steps:
       - template: ../templates/template-kubernets-build.yaml
         parameters:
-          serviceConnection: 'sc-estudos'
+          serviceConnection: {{sua service connection}}
           containerRegistry: $(containerRegistry)
           acrLogin: $(acrLogin)
     
