@@ -11,18 +11,19 @@ parameters:
     type: string
     default: ""
 
-- task: Kubernetes@1
-  inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscriptionEndpoint: ${{ parameters.serviceConnection }}
-    azureResourceGroup: 'estudosaks'
-    kubernetesCluster: 'estudosaks1'
-    namespace: 'default'
-    command: 'apply'
-    useConfigurationFile: true
-    configuration: '01_kubernetes_aks'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
-    azureSubscriptionEndpointForSecrets: ${{ parameters.serviceConnection }}
-    azureContainerRegistry: ${{ parameters.containerRegistry }}
-    forceUpdate: false
+steps:
+  - task: Kubernetes@1
+    inputs:
+      connectionType: 'Azure Resource Manager'
+      azureSubscriptionEndpoint: ${{ parameters.serviceConnection }}
+      azureResourceGroup: 'estudosaks'
+      kubernetesCluster: 'estudosaks1'
+      namespace: 'default'
+      command: 'apply'
+      useConfigurationFile: true
+      configuration: '01_kubernetes_aks'
+      secretType: 'dockerRegistry'
+      containerRegistryType: 'Azure Container Registry'
+      azureSubscriptionEndpointForSecrets: ${{ parameters.serviceConnection }}
+      azureContainerRegistry: ${{ parameters.containerRegistry }}
+      forceUpdate: false
