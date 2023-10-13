@@ -21,3 +21,5 @@ steps:
         docker build -t ${{ parameters.containerRegistry }}/web-game:tag 2048-game
         az acr login -n {{ parameters.acrLogin }}
         docker push ${{ parameters.containerRegistry }}/web-game:tag
+    
+        

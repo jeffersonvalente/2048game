@@ -1,3 +1,8 @@
+parameters:
+  - name: containerRegistry
+    type: string
+    default: ""
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,7 +26,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: web-game
-        image: mylabacr13.azurecr.io/web-game:tag
+        image: ${{ parameters.containerRegistry }}/web-game:tag
         ports:
         - containerPort: 80
         resources:
