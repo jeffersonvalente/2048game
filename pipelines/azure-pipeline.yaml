@@ -23,7 +23,7 @@ stages:
       steps:
         - script: cat 01_kubernetes_aks/app-deploy.yaml 
 
-    - job: azureResources
+    - job: azureResources2
       displayName: "Kubernets Build"
       steps:
       - template: ../templates/template-kubernets-build.yaml
