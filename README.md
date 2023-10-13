@@ -1,3 +1,6 @@
+
+Projeto usando a integração do github e do ADO e AKS
+
 Para funcionar deve ser criado uma library no azure devops contendo os seguintes secrets:
 
 acrLogin = usuario de login no seu acr
