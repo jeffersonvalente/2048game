@@ -26,7 +26,7 @@ stages:
 
     - job: azureResources2
       displayName: "Kubernets Build"
-      dependsOn: 'catAppDeploy'
+      dependsOn: 'azureResources'
       steps:
       - template: ../templates/template-kubernets-build.yaml
         parameters:
