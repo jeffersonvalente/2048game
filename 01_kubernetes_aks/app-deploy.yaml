@@ -1,8 +1,3 @@
-parameters:
-  - name: containerRegistry
-    type: string
-    default: ""
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
