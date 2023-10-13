@@ -18,7 +18,7 @@ stages:
           containerRegistry: $(containerRegistry)
           acrLogin: $(acrLogin)
 
-    - job: cat app-deploy
+    - job: catAppDeploy
       displayName: "cat file"
       steps:
         - script: cat 01_kubernetes_aks/app-deploy.yaml 
