@@ -18,6 +18,7 @@ steps:
       azureSubscriptionEndpoint: ${{ parameters.serviceConnection }}
       azureResourceGroup: 'estudosaks'
       kubernetesCluster: 'estudosaks1'
+      useClusterAdmin: true
       namespace: 'default'
       command: 'apply'
       useConfigurationFile: true
