@@ -21,9 +21,7 @@ stages:
     - job: cat app-deploy
       displayName: "cat file"
       steps:
-        - script: cat 01_kubernetes_aks/app-deploy.yaml
-          parameters:
-           containerRegistry: $(containerRegistry) 
+        - script: cat 01_kubernetes_aks/app-deploy.yaml 
 
     - job: azureResources
       displayName: "Kubernets Build"
